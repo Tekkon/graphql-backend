@@ -3,7 +3,7 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 
 // Schema
-import { schema } from '../schema'
+import schema from '../schema.graphql'
 
 // Resolvers
 import { resolvers } from '../resolvers'

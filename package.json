@@ -6,7 +6,8 @@
   "author": "Nikita Popov <ningen.tos@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "babel-watch ./src/index.js"
+    "start": "yarn clean && babel-watch ./src/index.js",
+    "clean": "rm -rf ./node_modules/.cache/babel-loader"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
