@@ -1,5 +1,7 @@
+import { getBooks } from './model'
+
 export const resolvers = {
   Query: {
-    hello: () => 'Hello, client!'
+    books: () => getBooks()
   }
 }
