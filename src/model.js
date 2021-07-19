@@ -31,3 +31,9 @@ export const getBooks = () => {
 
   return books;
 }
+
+export const getBookById = (id) => {
+  const book = booksDB.get(id);
+  
+  return { id, ...book }
+}

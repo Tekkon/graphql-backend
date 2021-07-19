@@ -1,7 +1,10 @@
-import { getBooks } from './model'
+import { getBooks, getBookById } from './model'
 
 export const resolvers = {
   Query: {
-    books: () => getBooks()
+    books: () => getBooks(),
+    book: (_, { id }) => {
+      return getBookById(id)
+    }
   }
 }
