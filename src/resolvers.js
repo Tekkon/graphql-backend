@@ -8,8 +8,8 @@ export const resolvers = {
     }
   },
   Mutation: {
-    addBook: (_, { title, id, author }) => {
-      return saveBook(title, id, author)
+    addBook: (_, { book }) => {
+      return saveBook(book)
     }
   }
 }

@@ -1,13 +1,15 @@
+const generateId = require('uuid/v1')
+
 const initialDB = [
   [
-    'ID-1',
+    0,
     {
       title: "Harry Potter and the Philosopher's stone",
       author: "J.K. Rowling"
     }
   ],
   [
-    'ID-2',
+    1,
     {
       title: "Jurassic Park",
       author: "Michael Crichton"
@@ -38,9 +40,9 @@ export const getBookById = (id) => {
   return { id, ...book }
 }
 
-export const saveBook = (title, id, author) => {
-  const receivedBook = { title, id, author };
-  booksDB.set(id, receivedBook);
+export const saveBook = (book) => {
+  const id = generateId();
+  booksDB.set(id, book);
   const savedBook = booksDB.get(id);
 
   return { id, ...savedBook }

@@ -1,5 +1,5 @@
 type Book {
-    id: ID!,
+    id: ID!
     title: String!
     author: String!
 }
@@ -10,5 +10,10 @@ type Query {
 }
 
 type Mutation {
-    addBook(title: String!, id: ID!, author: String!): Book
+    addBook(book: BookInput!): Book
+}
+
+input BookInput {
+    title: String!
+    author: String!
 }
