@@ -1,8 +1,10 @@
 #import '../bus/books/types.graphql'
+#import '../bus/starships/types.graphql'
 
 type Query {
     books: [Book!]!
     book(id: ID!): Book
+    starships: [Starship!]!
 }
 
 type Mutation {
