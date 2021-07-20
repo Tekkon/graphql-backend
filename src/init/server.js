@@ -4,6 +4,7 @@ import { ApolloServer } from "apollo-server-express";
 import session from 'express-session';
 import cors from 'cors';
 import { sessionOptions, corsOptions } from "./config";
+import http from 'http';
 
 // Schema Types
 import schema from './types.graphql'
@@ -43,4 +44,7 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app, cors: false });
 
-export { server, app };
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
+
+export { server, httpServer, app };

@@ -1,12 +1,23 @@
+// Core
 import { AuthenticationError } from "apollo-server-express";
 import jwt from 'jsonwebtoken';
+
+// Secrets
 import { USER_SECRET } from "../../init/config";
+
+// PubSub
+import { pubSub } from "../../init/pubSub";
+import { events } from "./events";
 
 import { db } from './db'
 
 export const mutations = {
   signUp: (_, user) => {
-    db.push(user)
+    db.push(user);
+
+    pubSub.publish(events.USER_ADDED, {
+      userAdded: user
+    });
 
     return user;
   },
