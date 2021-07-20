@@ -3,10 +3,10 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 
 // Schema
-import schema from '../schema.graphql'
+import schema from './schema.graphql'
 
 // Resolvers
-import { resolvers } from '../resolvers'
+import { resolvers } from './resolvers'
 
 const app = express();
 
