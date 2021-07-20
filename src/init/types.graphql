@@ -1,8 +1,4 @@
-type Book {
-    id: ID!
-    title: String!
-    author: String!
-}
+#import '../bus/books/types.graphql'
 
 type Query {
     books: [Book!]!
@@ -13,14 +9,4 @@ type Mutation {
     addBook(book: BookInput!): Book
     removeBook(id: ID!): Book
     updateBook(id: ID!, book: UpdateBookInput): Book
-}
-
-input BookInput {
-    title: String!
-    author: String!
-}
-
-input UpdateBookInput {
-    title: String
-    author: String
 }
